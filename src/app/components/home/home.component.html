@@ -1,0 +1,25 @@
+<div class="container">
+	<div><a routerLink="/add-task"  class="btn btn-secondary">Add Task</a></div>
+	
+	
+<div *ngIf="taskingServices.tasks.length == 0">
+<p  class="alert  alert-danger"> 
+	No tasks for to day .
+	</p>
+</div>
+<div *ngIf="taskingServices.tasks.length !=0">
+	<ul>	 
+<li *ngFor = 
+"let task of taskingServices.tasks ; index as i ">
+<a  [routerLink]="['/task' , i]" class="btn btn-success">{{task.title}}</a>
+
+	
+	
+	<button class="btn btn-danger delbtn"  (click)="deleteTask(i)">Delete </button >
+	
+
+	</li>
+	</ul>
+</div>	
+
+</div>	
